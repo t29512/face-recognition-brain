@@ -8,25 +8,39 @@ import Particles from 'react-particles-js';
 const particleOptions = {
   particles: {
     number: {
-      value: 50,
+      value: 15,
       density: {
         enable: true,
         value_area: 1000,
       },
     },
-    opacity: {
-      value: 0.5,
+    color: {
+      value: 'B8B2C6',
+    },
+    size: {
       anim: {
         enable: true,
+        speed: 10,
+      },
+      value: 100,
+      random: true,
+    },
+    shape: {
+      type: 'edge',
+    },
+    opacity: {
+      value: 0.5,
+      random: true,
+      anim: {
+        enable: false,
       },
     },
-  },
-  interactivity: {
-    events: {
-      onHover: {
-        enable: true,
-        mode: 'repulse',
-      },
+    line_linked: {
+      enable: false,
+    },
+    move: {
+      speed: 1,
+      out_mode: 'out',
     },
   },
 };
