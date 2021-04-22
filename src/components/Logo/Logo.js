@@ -3,7 +3,7 @@ import brain from './brain.png';
 
 const Logo = () => {
   return (
-    <div className='ma6 mt0'>
+    <div className='ml6 mt0'>
       <Tilt
         className='Tilt'
         options={{ max: 32 }}

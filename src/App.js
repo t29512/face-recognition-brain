@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 
@@ -41,53 +42,42 @@ const particleOptions = {
       enable: false,
     },
     move: {
-      speed: 1,
+      speed: 1.2,
       out_mode: 'out',
     },
   },
 };
 
 //API
-/* const Clarifai = process.env.TRAVIS ? require('clarifai') : require('../src'); */
-
 const app = new Clarifai.App({
   apiKey: 'e9b797b58db340adab6903e70e81259c',
 });
-
-/* const clarifai = new Clarifai.App({
-  apiKey: process.env.e9b797b58db340adab6903e70e81259c,
-}); */
-
-function log(d) {
-  try {
-    console.log(JSON.stringify(d, null, 2));
-  } catch (e) {
-    console.log(d);
-  }
-}
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       input: '',
+      imageUrl: '',
     };
   }
 
   onInputChange = (event) => {
     this.setState({ input: event.target.value });
-    console.log(event.target.value);
   };
 
   onButtonSubmit = () => {
-    console.log('click');
+    // Need to set a new state instesd of using input cause it would show the picture straight away before submission
+    this.setState({ imageUrl: this.state.input });
     app.models
-      .predict(
-        Clarifai.FACE_DETECT_MODEL,
-        'https://samples.clarifai.com/metro-north.jpg'
-      )
-      .then(log)
-      .catch(log);
+      .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+      .then(function (response) {
+        try {
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
+      });
   };
 
   render() {
@@ -101,7 +91,7 @@ class App extends React.Component {
           onInputChange={this.onInputChange}
           onButtonSubmit={this.onButtonSubmit}
         />
-        {/* <FaceRecognition /> */}
+        <FaceRecognition imageUrl={this.state.imageUrl} />
       </div>
     );
   }
