@@ -1,19 +1,21 @@
-import Tilt from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import brain from './brain.png';
 
 const Logo = () => {
   return (
-    <div className='ml6 mt0'>
-      <Tilt
-        className='Tilt'
-        options={{ max: 32 }}
-        style={{ height: 150, width: 150 }}
-      >
-        <div className='Tilt-inner'>
-          <img src={brain} alt='logo' />
-        </div>
-      </Tilt>
-    </div>
+    <Tilt
+      className='center mb4'
+      tiltMaxAngleX={20}
+      tiltMaxAngleY={20}
+      perspective={400}
+      scale={1.2}
+      gyroscope={true}
+      style={{ height: 150, width: 150 }}
+    >
+      <div style={{ height: '150px' }}>
+        <img src={brain} alt='logo' width='150px' />
+      </div>
+    </Tilt>
   );
 };
 
