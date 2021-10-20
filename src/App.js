@@ -26,11 +26,10 @@ const particleOptions = {
         enable: true,
         speed: 10,
       },
-      value: 100,
-      random: true,
+      value: 50,
     },
     shape: {
-      type: 'edge',
+      type: 'square',
     },
     opacity: {
       value: 0.5,
