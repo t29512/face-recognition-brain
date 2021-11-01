@@ -51,7 +51,7 @@ class Register extends React.Component {
 
   render() {
     return (
-      <form className='shadow-5 br3 ba dark-gray b--black-20 w-100 w-50-m w-25-l mw5 center'>
+      <div className='shadow-5 br3 ba dark-gray b--black-20 w-100 w-50-m w-25-l mw5 center'>
         <main className='pa4 black-80'>
           <div className='measure'>
             <fieldset id='Register' className='ba b--transparent ph0 mh0'>
@@ -106,7 +106,7 @@ class Register extends React.Component {
             </div>
           </div>
         </main>
-      </form>
+      </div>
     );
   }
 }
