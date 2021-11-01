@@ -18,7 +18,7 @@ class SignIn extends React.Component {
 
   //Fetch by default does a GET request
   onSubmitSignIn = () => {
-    fetch('https://face-recogni-brain.herokuapp.com/signin', {
+    fetch('http://localhost:3000/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

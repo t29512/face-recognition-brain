@@ -137,7 +137,7 @@ class App extends React.Component {
   onPictureSubmit = () => {
     // Need to set a new state instesd of using input cause it would show the picture straight away before submission
     this.setState({ imageUrl: this.state.input });
-    fetch('https://face-recogni-brain.herokuapp.com/imageurl', {
+    fetch('http://localhost:3000/imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -149,7 +149,7 @@ class App extends React.Component {
         this.displayFaceBox(this.calculateFacePositoin(response));
         //Send a put request to get the user entry count then update the state
         if (response) {
-          fetch('https://face-recogni-brain.herokuapp.com/image', {
+          fetch('http://localhost:3000/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

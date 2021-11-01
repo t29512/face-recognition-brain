@@ -29,7 +29,7 @@ class Register extends React.Component {
     // if (email === /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) {
     //   return window.alert('Invalid email address');
     // }
-    fetch('https://face-recogni-brain.herokuapp.com/register', {
+    fetch('http://localhost:3000/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
