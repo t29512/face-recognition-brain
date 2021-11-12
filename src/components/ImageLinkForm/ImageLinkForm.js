@@ -2,7 +2,7 @@ const ImageLinkForm = ({ onInputChange, onPictureSubmit }) => {
   return (
     <div>
       <p className='f3'>
-        Mr.Barin will recognize faces in your your pictures. Give it a try!
+        Mr. Barin will recognize human faces in your pictures. Give it a try!
       </p>
       <div className='center shadow-5 mw7'>
         <input
