@@ -13,9 +13,3 @@
   width: 100vw;
   z-index: -1;
 }
-
-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
